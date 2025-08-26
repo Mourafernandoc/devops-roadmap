@@ -45,8 +45,17 @@
       a.textContent = h.textContent;
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = doc.getElementById(h.id);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        const id = h.id;
+        const target = doc.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          // Sincroniza o hash da URL
+          if (history.pushState) {
+            history.pushState(null, '', `#${id}`);
+          } else {
+            window.location.hash = `#${id}`;
+          }
+        }
       });
       li.appendChild(a);
       list.appendChild(li);
@@ -73,6 +82,16 @@
     if (!doc) return;
     buildTOC(doc);
     autoResize(doc);
+    // Navega para o hash inicial, se houver
+    const goToHash = () => {
+      const hash = decodeURIComponent(window.location.hash || '').replace(/^#/, '');
+      if (!hash) return;
+      const el = doc.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    };
+    goToHash();
+    // Ouve mudanças de hash
+    window.addEventListener('hashchange', goToHash);
   });
 })();
 
