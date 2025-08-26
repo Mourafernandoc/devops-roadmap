@@ -1,69 +1,89 @@
-// Scroll suave para links internos
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-  
-  // Carregar e renderizar o Markdown principal
-  (async function loadMarkdown() {
-    const container = document.getElementById('markdown');
-    const tocContainer = document.getElementById('toc');
-    if (!container) return;
-    try {
-      const response = await fetch('devops-complete-roadmap.md');
-      if (!response.ok) throw new Error(`Falha ao carregar Markdown: ${response.status}`);
-      const mdText = await response.text();
-      // Usando Marked (injetado via CDN no index.html)
-      container.innerHTML = marked.parse(mdText, { breaks: true });
+// Geração de TOC e personalização para conteúdo dentro do iframe
+(function initIframeTOC() {
+  const iframe = document.getElementById('markdownFrame');
+  const tocContainer = document.getElementById('toc');
+  if (!iframe || !tocContainer) return;
 
-      // Gerar IDs únicos para títulos e TOC
-      const headings = container.querySelectorAll('h1, h2, h3');
-      const slugify = str => str.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-');
-      const used = new Map();
-      headings.forEach(h => {
-        const base = slugify(h.textContent);
-        const count = used.get(base) || 0;
-        const id = count ? `${base}-${count}` : base;
-        used.set(base, count + 1);
-        h.id = id;
-      });
+  const slugify = str => str
+    .toLowerCase()
+    .normalize('NFD').replace(/\p{Diacritic}/gu, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim().replace(/\s+/g, '-');
 
-      // Montar TOC
-      if (tocContainer) {
-        const list = document.createElement('ul');
-        headings.forEach(h => {
-          const level = h.tagName === 'H1' ? 1 : h.tagName === 'H2' ? 2 : 3;
-          const li = document.createElement('li');
-          li.className = `toc-l${level}`;
-          const a = document.createElement('a');
-          a.href = `#${h.id}`;
-          a.textContent = h.textContent;
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-        tocContainer.innerHTML = '';
-        tocContainer.appendChild(list);
-      }
-    } catch (err) {
-      container.innerHTML = `<p style="color:#f66">Erro ao carregar conteúdo: ${err.message}</p>`;
+  const buildTOC = (doc) => {
+    const used = new Map();
+    const headings = doc.querySelectorAll('h1, h2, h3');
+
+    // Envolver conteúdo com classe markdown e injetar CSS
+    const body = doc.body;
+    if (body && !body.querySelector('.markdown')) {
+      const wrapper = doc.createElement('div');
+      wrapper.className = 'markdown';
+      while (body.firstChild) wrapper.appendChild(body.firstChild);
+      body.appendChild(wrapper);
+      const link = doc.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'sytles.css';
+      doc.head.appendChild(link);
     }
-  })();
 
-  // Voltar ao topo
-  const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    const onScroll = () => {
-      if (window.scrollY > 400) backToTop.classList.add('show'); else backToTop.classList.remove('show');
+    headings.forEach(h => {
+      const base = slugify(h.textContent || 'secao');
+      const count = used.get(base) || 0;
+      const id = count ? `${base}-${count}` : base;
+      used.set(base, count + 1);
+      h.id = h.id || id;
+    });
+
+    const list = document.createElement('ul');
+    headings.forEach(h => {
+      const level = h.tagName === 'H1' ? 1 : h.tagName === 'H2' ? 2 : 3;
+      const li = document.createElement('li');
+      li.className = `toc-l${level}`;
+      const a = document.createElement('a');
+      a.href = `#${h.id}`;
+      a.textContent = h.textContent;
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = doc.getElementById(h.id);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    tocContainer.innerHTML = '';
+    tocContainer.appendChild(list);
+  };
+
+  const autoResize = (doc) => {
+    const update = () => {
+      const height = doc.documentElement.scrollHeight || doc.body.scrollHeight;
+      iframe.style.height = Math.max(600, height + 20) + 'px';
     };
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  }
+    update();
+    // Recalcular em mudanças de tamanho dentro do iframe
+    iframe.contentWindow.addEventListener('resize', update);
+    // E após pequenas esperas (conteúdos assíncronos eventuais)
+    setTimeout(update, 250);
+    setTimeout(update, 1000);
+  };
+
+  iframe.addEventListener('load', () => {
+    const doc = iframe.contentDocument;
+    if (!doc) return;
+    buildTOC(doc);
+    autoResize(doc);
+  });
+})();
+
+// Voltar ao topo
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  const onScroll = () => {
+    if (window.scrollY > 400) backToTop.classList.add('show'); else backToTop.classList.remove('show');
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+}
   

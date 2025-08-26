@@ -1,0 +1,2854 @@
+<h1>Roadmap Completo DevOps 2025 - Guia de Estudos</h1>
+<h2>Índice</h2>
+<ol>
+<li><a href="#1-introdu%C3%A7%C3%A3o-ao-devops">Introdução ao DevOps</a></li>
+<li><a href="#2-fundamentos---sistemas-operacionais">Fundamentos - Sistemas Operacionais</a></li>
+<li><a href="#3-redes-e-protocolos">Redes e Protocolos</a></li>
+<li><a href="#4-linguagens-de-programa%C3%A7%C3%A3o-e-scripting">Linguagens de Programação e Scripting</a></li>
+<li><a href="#5-controle-de-vers%C3%A3o">Controle de Versão</a></li>
+<li><a href="#6-containeriza%C3%A7%C3%A3o">Containerização</a></li>
+<li><a href="#7-orquestra%C3%A7%C3%A3o-de-containers">Orquestração de Containers</a></li>
+<li><a href="#8-cicd-integra%C3%A7%C3%A3o-e-entrega-cont%C3%ADnua">CI/CD (Integração e Entrega Contínua)</a></li>
+<li><a href="#9-infraestrutura-como-c%C3%B3digo-iac">Infraestrutura como Código (IaC)</a></li>
+<li><a href="#10-cloud-computing">Cloud Computing</a></li>
+<li><a href="#11-monitoramento-e-observabilidade">Monitoramento e Observabilidade</a></li>
+<li><a href="#12-seguran%C3%A7a-devsecops">Segurança DevSecOps</a></li>
+<li><a href="#13-ferramentas-de-configura%C3%A7%C3%A3o">Ferramentas de Configuração</a></li>
+<li><a href="#14-gitops">GitOps</a></li>
+<li><a href="#15-site-reliability-engineering-sre">Site Reliability Engineering (SRE)</a></li>
+<li><a href="#16-microservices-e-arquitetura">Microservices e Arquitetura</a></li>
+<li><a href="#17-projetos-pr%C3%A1ticos">Projetos Práticos</a></li>
+</ol>
+<hr>
+<h2>1. Introdução ao DevOps</h2>
+<h3>1.1 Conceitos Fundamentais</h3>
+<p><strong>O que é DevOps?</strong>
+DevOps é uma cultura, filosofia e conjunto de práticas que combina desenvolvimento de software (Dev) e operações de TI (Ops). O objetivo é encurtar o ciclo de vida do desenvolvimento de sistemas e fornecer entrega contínua com alta qualidade de software.</p>
+<p><strong>Princípios Core do DevOps:</strong></p>
+<ul>
+<li><strong>Colaboração</strong>: Quebrar silos entre desenvolvimento e operações</li>
+<li><strong>Automação</strong>: Automatizar processos repetitivos e propensos a erros</li>
+<li><strong>Integração Contínua</strong>: Integrar código frequentemente</li>
+<li><strong>Entrega Contínua</strong>: Automatizar o processo de entrega</li>
+<li><strong>Monitoramento Contínuo</strong>: Observar aplicações e infraestrutura em tempo real</li>
+<li><strong>Feedback Rápido</strong>: Ciclos de feedback curtos para melhorias rápidas</li>
+</ul>
+<p><strong>Benefícios do DevOps:</strong></p>
+<ul>
+<li>Velocidade de entrega aumentada</li>
+<li>Maior confiabilidade</li>
+<li>Melhor colaboração entre equipes</li>
+<li>Maior segurança</li>
+<li>Escalabilidade aprimorada</li>
+</ul>
+<h3>1.2 Cultura DevOps</h3>
+<p><strong>CALMS Framework:</strong></p>
+<ul>
+<li><strong>C</strong>ulture: Mudança cultural organizacional</li>
+<li><strong>A</strong>utomation: Automação de processos</li>
+<li><strong>L</strong>ean: Princípios lean para eliminar desperdício</li>
+<li><strong>M</strong>easurement: Métricas e monitoramento</li>
+<li><strong>S</strong>haring: Compartilhamento de conhecimento</li>
+</ul>
+<p><strong>Three Ways:</strong></p>
+<ol>
+<li><strong>Flow</strong>: Fluxo de trabalho da esquerda para direita</li>
+<li><strong>Feedback</strong>: Amplificar loops de feedback</li>
+<li><strong>Continuous Learning</strong>: Cultura de experimentação e aprendizado</li>
+</ol>
+<hr>
+<h2>2. Fundamentos - Sistemas Operacionais</h2>
+<h3>2.1 Linux (Essencial)</h3>
+<p><strong>Distribuições Populares:</strong></p>
+<ul>
+<li><strong>Ubuntu</strong>: Ideal para iniciantes</li>
+<li><strong>CentOS/RHEL</strong>: Comum em empresas</li>
+<li><strong>Amazon Linux</strong>: Para AWS</li>
+<li><strong>Alpine</strong>: Leve para containers</li>
+</ul>
+<p><strong>Comandos Essenciais:</strong></p>
+<pre><code class="language-bash"># Navegação e arquivos
+ls, cd, pwd, mkdir, rmdir, rm, cp, mv, find, locate
+chmod, chown, chgrp, umask
+
+# Processos
+ps, top, htop, kill, killall, nohup, jobs, fg, bg
+
+# Rede
+netstat, ss, ping, wget, curl, scp, rsync
+
+# Sistema
+df, du, free, uname, uptime, who, w, id
+
+# Texto
+cat, less, more, head, tail, grep, awk, sed, sort, uniq
+
+# Compressão
+tar, gzip, gunzip, zip, unzip
+</code></pre>
+<p><strong>Gerenciamento de Serviços:</strong></p>
+<pre><code class="language-bash"># SystemD
+systemctl start|stop|restart|status service_name
+systemctl enable|disable service_name
+journalctl -u service_name
+
+# Logs
+tail -f /var/log/syslog
+journalctl -f
+</code></pre>
+<h3>2.2 Windows Server (Opcional)</h3>
+<p><strong>PowerShell Basics:</strong></p>
+<ul>
+<li>Cmdlets fundamentais</li>
+<li>Pipeline</li>
+<li>Scripts básicos</li>
+<li>Active Directory</li>
+<li>IIS</li>
+</ul>
+<hr>
+<h2>3. Redes e Protocolos</h2>
+<h3>3.1 Fundamentos de Rede</h3>
+<p><strong>Modelo OSI e TCP/IP:</strong></p>
+<ul>
+<li>Camadas e suas funções</li>
+<li>Protocolos por camada</li>
+<li>Encapsulamento de dados</li>
+</ul>
+<p><strong>Protocolos Essenciais:</strong></p>
+<ul>
+<li><strong>HTTP/HTTPS</strong>: Comunicação web</li>
+<li><strong>TCP/UDP</strong>: Transporte</li>
+<li><strong>DNS</strong>: Resolução de nomes</li>
+<li><strong>DHCP</strong>: Configuração automática de rede</li>
+<li><strong>SSH</strong>: Acesso remoto seguro</li>
+<li><strong>FTP/SFTP</strong>: Transferência de arquivos</li>
+</ul>
+<h3>3.2 Conceitos de Segurança de Rede</h3>
+<p><strong>Firewalls:</strong></p>
+<ul>
+<li>iptables (Linux)</li>
+<li>UFW (Ubuntu)</li>
+<li>Configuração básica de regras</li>
+</ul>
+<p><strong>VPN e Túneis:</strong></p>
+<ul>
+<li>Conceitos básicos</li>
+<li>OpenVPN</li>
+<li>WireGuard</li>
+</ul>
+<p><strong>Load Balancers:</strong></p>
+<ul>
+<li>Layer 4 vs Layer 7</li>
+<li>Algoritmos de balanceamento</li>
+<li>Health checks</li>
+</ul>
+<hr>
+<h2>4. Linguagens de Programação e Scripting</h2>
+<h3>4.1 Bash/Shell Scripting</h3>
+<p><strong>Fundamentos:</strong></p>
+<pre><code class="language-bash">#!/bin/bash
+
+# Variáveis
+NAME=&quot;DevOps&quot;
+echo &quot;Hello, $NAME&quot;
+
+# Condicionais
+if [ &quot;$NAME&quot; = &quot;DevOps&quot; ]; then
+    echo &quot;Correct name&quot;
+fi
+
+# Loops
+for i in {1..5}; do
+    echo &quot;Number: $i&quot;
+done
+
+# Funções
+function deploy() {
+    echo &quot;Deploying application...&quot;
+}
+</code></pre>
+<p><strong>Scripts Úteis:</strong></p>
+<ul>
+<li>Backup automatizado</li>
+<li>Monitoramento de recursos</li>
+<li>Deploy de aplicações</li>
+<li>Log rotation</li>
+</ul>
+<h3>4.2 Python</h3>
+<p><strong>Por que Python em DevOps:</strong></p>
+<ul>
+<li>Automação de tarefas</li>
+<li>Scripts de deployment</li>
+<li>APIs e integrações</li>
+<li>Análise de logs</li>
+<li>Machine Learning Ops</li>
+</ul>
+<p><strong>Bibliotecas Essenciais:</strong></p>
+<pre><code class="language-python"># Requests para APIs
+import requests
+response = requests.get(&#39;https://api.github.com&#39;)
+
+# Subprocess para comandos do sistema
+import subprocess
+result = subprocess.run([&#39;ls&#39;, &#39;-la&#39;], capture_output=True, text=True)
+
+# Paramiko para SSH
+import paramiko
+ssh = paramiko.SSHClient()
+ssh.connect(&#39;hostname&#39;, username=&#39;user&#39;, password=&#39;pass&#39;)
+
+# Boto3 para AWS
+import boto3
+ec2 = boto3.client(&#39;ec2&#39;)
+</code></pre>
+<h3>4.3 Go (Golang) - Crescente em DevOps</h3>
+<p><strong>Características:</strong></p>
+<ul>
+<li>Performance alta</li>
+<li>Compilação estática</li>
+<li>Concorrência nativa</li>
+<li>Usado em: Docker, Kubernetes, Terraform, Prometheus</li>
+</ul>
+<p><strong>Exemplo Básico:</strong></p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;net/http&quot;
+)
+
+func main() {
+    http.HandleFunc(&quot;/health&quot;, func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, &quot;OK&quot;)
+    })
+    
+    fmt.Println(&quot;Server starting on :8080&quot;)
+    http.ListenAndServe(&quot;:8080&quot;, nil)
+}
+</code></pre>
+<hr>
+<h2>5. Controle de Versão</h2>
+<h3>5.1 Git - Essencial</h3>
+<p><strong>Conceitos Fundamentais:</strong></p>
+<ul>
+<li>Repository, Working Directory, Staging Area</li>
+<li>Commits, Branches, Merges</li>
+<li>Remote repositories</li>
+</ul>
+<p><strong>Comandos Essenciais:</strong></p>
+<pre><code class="language-bash"># Configuração inicial
+git config --global user.name &quot;Seu Nome&quot;
+git config --global user.email &quot;seu@email.com&quot;
+
+# Básicos
+git init
+git clone &lt;url&gt;
+git add &lt;file&gt;
+git commit -m &quot;message&quot;
+git push origin main
+git pull origin main
+
+# Branches
+git branch feature-branch
+git checkout feature-branch
+git checkout -b feature-branch
+git merge feature-branch
+
+# Histórico
+git log --oneline
+git show &lt;commit-hash&gt;
+git diff
+</code></pre>
+<p><strong>Git Flow:</strong></p>
+<ul>
+<li>Main/Master branch</li>
+<li>Develop branch</li>
+<li>Feature branches</li>
+<li>Release branches</li>
+<li>Hotfix branches</li>
+</ul>
+<p><strong>GitHub/GitLab/Bitbucket:</strong></p>
+<ul>
+<li>Pull/Merge Requests</li>
+<li>Code Reviews</li>
+<li>Actions/CI integrado</li>
+<li>Issues e Project Management</li>
+</ul>
+<h3>5.2 Branching Strategies</h3>
+<p><strong>Git Flow vs GitHub Flow:</strong></p>
+<ul>
+<li>Git Flow: Mais estruturado para releases complexos</li>
+<li>GitHub Flow: Mais simples para continuous deployment</li>
+</ul>
+<p><strong>Trunk-based Development:</strong></p>
+<ul>
+<li>Commits frequentes na main branch</li>
+<li>Feature flags para controle de features</li>
+<li>Releases mais rápidos</li>
+</ul>
+<hr>
+<h2>6. Containerização</h2>
+<h3>6.1 Docker - Fundamental</h3>
+<p><strong>Conceitos Core:</strong></p>
+<ul>
+<li>Images vs Containers</li>
+<li>Dockerfile</li>
+<li>Docker Hub/Registry</li>
+<li>Volumes</li>
+<li>Networks</li>
+</ul>
+<p><strong>Dockerfile Exemplo:</strong></p>
+<pre><code class="language-dockerfile">FROM node:16-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [&quot;npm&quot;, &quot;start&quot;]
+</code></pre>
+<p><strong>Comandos Essenciais:</strong></p>
+<pre><code class="language-bash"># Images
+docker build -t app-name:tag .
+docker images
+docker rmi image-id
+docker pull ubuntu:20.04
+
+# Containers
+docker run -d -p 8080:80 nginx
+docker ps
+docker stop container-id
+docker rm container-id
+docker exec -it container-id bash
+
+# Volumes
+docker volume create my-volume
+docker run -v my-volume:/data ubuntu
+
+# Networks
+docker network create my-network
+docker run --network my-network ubuntu
+</code></pre>
+<p><strong>Docker Compose:</strong></p>
+<pre><code class="language-yaml">version: &#39;3.8&#39;
+
+services:
+  web:
+    build: .
+    ports:
+      - &quot;3000:3000&quot;
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: myapp
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6-alpine
+
+volumes:
+  postgres_data:
+</code></pre>
+<h3>6.2 Melhores Práticas Docker</h3>
+<p><strong>Dockerfile Optimization:</strong></p>
+<ul>
+<li>Multi-stage builds</li>
+<li>Minimize layers</li>
+<li>Use specific tags</li>
+<li>Don&#39;t run as root</li>
+<li>Use .dockerignore</li>
+</ul>
+<p><strong>Security:</strong></p>
+<ul>
+<li>Scan for vulnerabilities</li>
+<li>Use minimal base images</li>
+<li>Keep images updated</li>
+<li>Secrets management</li>
+</ul>
+<hr>
+<h2>7. Orquestração de Containers</h2>
+<h3>7.1 Kubernetes - Essencial</h3>
+<p><strong>Arquitetura Kubernetes:</strong></p>
+<p><strong>Master Components:</strong></p>
+<ul>
+<li><strong>API Server</strong>: Interface para cluster</li>
+<li><strong>etcd</strong>: Armazenamento de configuração</li>
+<li><strong>Scheduler</strong>: Agenda pods nos nodes</li>
+<li><strong>Controller Manager</strong>: Controla estado desejado</li>
+</ul>
+<p><strong>Node Components:</strong></p>
+<ul>
+<li><strong>kubelet</strong>: Agente que roda nos nodes</li>
+<li><strong>kube-proxy</strong>: Networking</li>
+<li><strong>Container Runtime</strong>: Docker, containerd</li>
+</ul>
+<p><strong>Objetos Kubernetes:</strong></p>
+<p><strong>Pod:</strong></p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.21
+    ports:
+    - containerPort: 80
+</code></pre>
+<p><strong>Deployment:</strong></p>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.21
+        ports:
+        - containerPort: 80
+</code></pre>
+<p><strong>Service:</strong></p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer
+</code></pre>
+<p><strong>ConfigMap e Secret:</strong></p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  database_url: &quot;postgresql://localhost/mydb&quot;
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secret
+type: Opaque
+data:
+  password: cGFzc3dvcmQ=  # base64 encoded
+</code></pre>
+<p><strong>kubectl Commands:</strong></p>
+<pre><code class="language-bash"># Cluster info
+kubectl cluster-info
+kubectl get nodes
+
+# Pods
+kubectl get pods
+kubectl describe pod pod-name
+kubectl logs pod-name
+kubectl exec -it pod-name -- bash
+
+# Deployments
+kubectl get deployments
+kubectl scale deployment nginx-deployment --replicas=5
+kubectl rollout status deployment/nginx-deployment
+
+# Services
+kubectl get services
+kubectl port-forward service/nginx-service 8080:80
+
+# Apply configurations
+kubectl apply -f deployment.yaml
+kubectl delete -f deployment.yaml
+</code></pre>
+<h3>7.2 Helm - Package Manager para Kubernetes</h3>
+<p><strong>Conceitos:</strong></p>
+<ul>
+<li>Charts: Pacotes de templates Kubernetes</li>
+<li>Values: Configurações customizáveis</li>
+<li>Releases: Instâncias de charts</li>
+</ul>
+<p><strong>Estrutura de Chart:</strong></p>
+<pre><code>mychart/
+  Chart.yaml          # Metadados do chart
+  values.yaml         # Valores padrão
+  templates/          # Templates Kubernetes
+    deployment.yaml
+    service.yaml
+    ingress.yaml
+</code></pre>
+<p><strong>Comandos Helm:</strong></p>
+<pre><code class="language-bash"># Instalar chart
+helm install myapp ./mychart
+helm install myapp bitnami/nginx
+
+# Gerenciar releases
+helm list
+helm upgrade myapp ./mychart
+helm rollback myapp 1
+helm uninstall myapp
+
+# Repositórios
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+helm search repo nginx
+</code></pre>
+<h3>7.3 Alternativas ao Kubernetes</h3>
+<p><strong>Docker Swarm:</strong></p>
+<ul>
+<li>Mais simples que Kubernetes</li>
+<li>Integrado ao Docker</li>
+<li>Boa para clusters pequenos</li>
+</ul>
+<p><strong>Nomad (HashiCorp):</strong></p>
+<ul>
+<li>Simpler orchestration</li>
+<li>Suporta containers e VMs</li>
+<li>Multi-region</li>
+</ul>
+<hr>
+<h2>8. CI/CD (Integração e Entrega Contínua)</h2>
+<h3>8.1 Conceitos Fundamentais</h3>
+<p><strong>Continuous Integration (CI):</strong></p>
+<ul>
+<li>Integração frequente de código</li>
+<li>Builds automatizados</li>
+<li>Testes automatizados</li>
+<li>Feedback rápido</li>
+</ul>
+<p><strong>Continuous Delivery (CD):</strong></p>
+<ul>
+<li>Automatização do processo de release</li>
+<li>Deploy para ambientes de staging</li>
+<li>Deploy para produção com aprovação manual</li>
+</ul>
+<p><strong>Continuous Deployment:</strong></p>
+<ul>
+<li>Deploy automatizado para produção</li>
+<li>Zero downtime deployments</li>
+<li>Blue-green deployments</li>
+<li>Canary deployments</li>
+</ul>
+<h3>8.2 Jenkins - Tradicional mas Ainda Relevante</h3>
+<p><strong>Instalação e Configuração:</strong></p>
+<pre><code class="language-bash"># Via Docker
+docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+</code></pre>
+<p><strong>Pipeline as Code (Jenkinsfile):</strong></p>
+<pre><code class="language-groovy">pipeline {
+    agent any
+    
+    stages {
+        stage(&#39;Build&#39;) {
+            steps {
+                echo &#39;Building...&#39;
+                sh &#39;npm install&#39;
+            }
+        }
+        
+        stage(&#39;Test&#39;) {
+            steps {
+                echo &#39;Testing...&#39;
+                sh &#39;npm test&#39;
+            }
+        }
+        
+        stage(&#39;Deploy&#39;) {
+            when {
+                branch &#39;main&#39;
+            }
+            steps {
+                echo &#39;Deploying...&#39;
+                sh &#39;docker build -t myapp .&#39;
+                sh &#39;docker push registry/myapp&#39;
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
+</code></pre>
+<h3>8.3 GitHub Actions - Moderno e Popular</h3>
+<p><strong>Workflow Example:</strong></p>
+<pre><code class="language-yaml">name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: &#39;16&#39;
+        cache: &#39;npm&#39;
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run tests
+      run: npm test
+    
+    - name: Build application
+      run: npm run build
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == &#39;refs/heads/main&#39;
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to production
+      run: |
+        echo &quot;Deploying to production&quot;
+        # Add deployment steps here
+</code></pre>
+<h3>8.4 GitLab CI/CD</h3>
+<p><strong>.gitlab-ci.yml Example:</strong></p>
+<pre><code class="language-yaml">stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+
+build:
+  stage: build
+  script:
+    - docker build -t $DOCKER_IMAGE .
+    - docker push $DOCKER_IMAGE
+
+test:
+  stage: test
+  script:
+    - npm install
+    - npm test
+
+deploy:
+  stage: deploy
+  script:
+    - kubectl set image deployment/myapp myapp=$DOCKER_IMAGE
+  only:
+    - main
+</code></pre>
+<h3>8.5 Outras Ferramentas CI/CD Populares</h3>
+<p><strong>Azure DevOps:</strong></p>
+<ul>
+<li>Integração com Microsoft ecosystem</li>
+<li>Azure Pipelines para CI/CD</li>
+<li>Boards para project management</li>
+</ul>
+<p><strong>CircleCI:</strong></p>
+<ul>
+<li>Cloud-native CI/CD</li>
+<li>Docker-first approach</li>
+<li>Parallelização automática</li>
+</ul>
+<p><strong>ArgoCD (GitOps):</strong></p>
+<ul>
+<li>Continuous deployment para Kubernetes</li>
+<li>Declarative GitOps</li>
+<li>Web UI para visualização</li>
+</ul>
+<p><strong>Tekton:</strong></p>
+<ul>
+<li>Cloud-native CI/CD para Kubernetes</li>
+<li>Pipeline as Code</li>
+<li>Reusable components</li>
+</ul>
+<hr>
+<h2>9. Infraestrutura como Código (IaC)</h2>
+<h3>9.1 Terraform - Líder de Mercado</h3>
+<p><strong>Conceitos Fundamentais:</strong></p>
+<ul>
+<li>Providers: AWS, Azure, GCP, etc.</li>
+<li>Resources: Componentes de infraestrutura</li>
+<li>State: Estado atual da infraestrutura</li>
+<li>Modules: Componentes reutilizáveis</li>
+</ul>
+<p><strong>Exemplo Básico:</strong></p>
+<pre><code class="language-hcl"># main.tf
+terraform {
+  required_providers {
+    aws = {
+      source  = &quot;hashicorp/aws&quot;
+      version = &quot;~&gt; 5.0&quot;
+    }
+  }
+}
+
+provider &quot;aws&quot; {
+  region = &quot;us-west-2&quot;
+}
+
+# VPC
+resource &quot;aws_vpc&quot; &quot;main&quot; {
+  cidr_block           = &quot;10.0.0.0/16&quot;
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags = {
+    Name = &quot;main-vpc&quot;
+  }
+}
+
+# Subnet
+resource &quot;aws_subnet&quot; &quot;public&quot; {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = &quot;10.0.1.0/24&quot;
+  availability_zone       = &quot;us-west-2a&quot;
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = &quot;public-subnet&quot;
+  }
+}
+
+# EC2 Instance
+resource &quot;aws_instance&quot; &quot;web&quot; {
+  ami           = &quot;ami-0c55b159cbfafe1d0&quot;
+  instance_type = &quot;t2.micro&quot;
+  subnet_id     = aws_subnet.public.id
+
+  user_data = &lt;&lt;-EOF
+    #!/bin/bash
+    yum update -y
+    yum install -y httpd
+    systemctl start httpd
+    systemctl enable httpd
+  EOF
+
+  tags = {
+    Name = &quot;web-server&quot;
+  }
+}
+</code></pre>
+<p><strong>Comandos Terraform:</strong></p>
+<pre><code class="language-bash"># Inicializar
+terraform init
+
+# Planejar mudanças
+terraform plan
+
+# Aplicar mudanças
+terraform apply
+
+# Destruir infraestrutura
+terraform destroy
+
+# Validar configuração
+terraform validate
+
+# Formatar código
+terraform fmt
+</code></pre>
+<p><strong>Terraform Modules:</strong></p>
+<pre><code class="language-hcl"># modules/ec2/main.tf
+variable &quot;instance_type&quot; {
+  description = &quot;Type of EC2 instance&quot;
+  type        = string
+  default     = &quot;t2.micro&quot;
+}
+
+variable &quot;subnet_id&quot; {
+  description = &quot;Subnet ID&quot;
+  type        = string
+}
+
+resource &quot;aws_instance&quot; &quot;this&quot; {
+  ami           = &quot;ami-0c55b159cbfafe1d0&quot;
+  instance_type = var.instance_type
+  subnet_id     = var.subnet_id
+}
+
+output &quot;instance_id&quot; {
+  value = aws_instance.this.id
+}
+
+# Usar o módulo
+module &quot;web_server&quot; {
+  source        = &quot;./modules/ec2&quot;
+  instance_type = &quot;t2.small&quot;
+  subnet_id     = aws_subnet.public.id
+}
+</code></pre>
+<h3>9.2 AWS CloudFormation</h3>
+<p><strong>Template Example (YAML):</strong></p>
+<pre><code class="language-yaml">AWSTemplateFormatVersion: &#39;2010-09-09&#39;
+Description: &#39;Simple web server stack&#39;
+
+Parameters:
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - t2.small
+      - t2.medium
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs &#39;&#39;]
+      MapPublicIpOnLaunch: true
+
+  WebServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c55b159cbfafe1d0
+      InstanceType: !Ref InstanceType
+      SubnetId: !Ref PublicSubnet
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          systemctl enable httpd
+
+Outputs:
+  InstanceId:
+    Description: &#39;ID of the EC2 instance&#39;
+    Value: !Ref WebServer
+    Export:
+      Name: !Sub &#39;${AWS::StackName}-InstanceId&#39;
+</code></pre>
+<h3>9.3 Azure Resource Manager (ARM) Templates</h3>
+<h3>9.4 Ansible - Configuration Management</h3>
+<p><strong>Conceitos:</strong></p>
+<ul>
+<li>Playbooks: Definições de configuração</li>
+<li>Inventory: Lista de hosts</li>
+<li>Modules: Unidades de trabalho</li>
+<li>Roles: Configurações reutilizáveis</li>
+</ul>
+<p><strong>Inventory Example:</strong></p>
+<pre><code class="language-ini">[webservers]
+web1.example.com
+web2.example.com
+
+[databases]
+db1.example.com
+
+[all:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+</code></pre>
+<p><strong>Playbook Example:</strong></p>
+<pre><code class="language-yaml">---
+- name: Setup web servers
+  hosts: webservers
+  become: yes
+  
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+    
+    - name: Copy website files
+      copy:
+        src: ./website/
+        dest: /var/www/html/
+        owner: www-data
+        group: www-data
+        mode: &#39;0644&#39;
+    
+    - name: Open firewall for HTTP
+      ufw:
+        rule: allow
+        port: &#39;80&#39;
+        proto: tcp
+</code></pre>
+<p><strong>Ansible Roles Structure:</strong></p>
+<pre><code>roles/
+  webserver/
+    tasks/
+      main.yml
+    handlers/
+      main.yml
+    templates/
+      apache.conf.j2
+    files/
+    vars/
+      main.yml
+    defaults/
+      main.yml
+    meta/
+      main.yml
+</code></pre>
+<hr>
+<h2>10. Cloud Computing</h2>
+<h3>10.1 Amazon Web Services (AWS)</h3>
+<p><strong>Core Services:</strong></p>
+<p><strong>Compute:</strong></p>
+<ul>
+<li><strong>EC2</strong>: Virtual machines</li>
+<li><strong>Lambda</strong>: Serverless functions</li>
+<li><strong>ECS/EKS</strong>: Container services</li>
+<li><strong>Auto Scaling</strong>: Automatic scaling</li>
+</ul>
+<p><strong>Storage:</strong></p>
+<ul>
+<li><strong>S3</strong>: Object storage</li>
+<li><strong>EBS</strong>: Block storage</li>
+<li><strong>EFS</strong>: File storage</li>
+</ul>
+<p><strong>Database:</strong></p>
+<ul>
+<li><strong>RDS</strong>: Relational databases</li>
+<li><strong>DynamoDB</strong>: NoSQL database</li>
+<li><strong>ElastiCache</strong>: In-memory caching</li>
+</ul>
+<p><strong>Networking:</strong></p>
+<ul>
+<li><strong>VPC</strong>: Virtual private cloud</li>
+<li><strong>Route 53</strong>: DNS service</li>
+<li><strong>CloudFront</strong>: CDN</li>
+<li><strong>ALB/NLB</strong>: Load balancers</li>
+</ul>
+<p><strong>AWS CLI Examples:</strong></p>
+<pre><code class="language-bash"># Configure AWS CLI
+aws configure
+
+# EC2
+aws ec2 describe-instances
+aws ec2 start-instances --instance-ids i-1234567890abcdef0
+
+# S3
+aws s3 ls
+aws s3 cp file.txt s3://bucket-name/
+aws s3 sync ./local-folder s3://bucket-name/folder/
+
+# Lambda
+aws lambda list-functions
+aws lambda invoke --function-name my-function output.txt
+</code></pre>
+<p><strong>AWS CDK (Cloud Development Kit):</strong></p>
+<pre><code class="language-typescript">import * as cdk from &#39;aws-cdk-lib&#39;;
+import * as ec2 from &#39;aws-cdk-lib/aws-ec2&#39;;
+import * as ecs from &#39;aws-cdk-lib/aws-ecs&#39;;
+
+export class MyStack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    const vpc = new ec2.Vpc(this, &#39;MyVpc&#39;, {
+      maxAzs: 2
+    });
+
+    const cluster = new ecs.Cluster(this, &#39;MyCluster&#39;, {
+      vpc: vpc
+    });
+  }
+}
+</code></pre>
+<h3>10.2 Microsoft Azure</h3>
+<p><strong>Core Services:</strong></p>
+<ul>
+<li><strong>Virtual Machines</strong>: Compute</li>
+<li><strong>App Service</strong>: Web apps</li>
+<li><strong>AKS</strong>: Azure Kubernetes Service</li>
+<li><strong>Storage Account</strong>: Various storage types</li>
+<li><strong>SQL Database</strong>: Managed SQL</li>
+<li><strong>Resource Groups</strong>: Organization</li>
+</ul>
+<p><strong>Azure CLI Examples:</strong></p>
+<pre><code class="language-bash"># Login
+az login
+
+# Resource Groups
+az group create --name myResourceGroup --location eastus
+
+# Virtual Machines
+az vm create \
+  --resource-group myResourceGroup \
+  --name myVM \
+  --image Ubuntu2204 \
+  --admin-username azureuser \
+  --generate-ssh-keys
+
+# AKS
+az aks create \
+  --resource-group myResourceGroup \
+  --name myAKSCluster \
+  --node-count 1 \
+  --enable-addons monitoring \
+  --generate-ssh-keys
+</code></pre>
+<h3>10.3 Google Cloud Platform (GCP)</h3>
+<p><strong>Core Services:</strong></p>
+<ul>
+<li><strong>Compute Engine</strong>: Virtual machines</li>
+<li><strong>GKE</strong>: Google Kubernetes Engine</li>
+<li><strong>Cloud Functions</strong>: Serverless</li>
+<li><strong>Cloud Storage</strong>: Object storage</li>
+<li><strong>Cloud SQL</strong>: Managed databases</li>
+</ul>
+<p><strong>gcloud CLI Examples:</strong></p>
+<pre><code class="language-bash"># Authentication
+gcloud auth login
+
+# Compute instances
+gcloud compute instances create my-instance \
+  --image-family ubuntu-2004-lts \
+  --image-project ubuntu-os-cloud
+
+# GKE
+gcloud container clusters create my-cluster \
+  --num-nodes=3 \
+  --zone=us-central1-a
+</code></pre>
+<h3>10.4 Multi-Cloud e Hybrid Cloud</h3>
+<p><strong>Estratégias:</strong></p>
+<ul>
+<li>Avoid vendor lock-in</li>
+<li>Disaster recovery</li>
+<li>Cost optimization</li>
+<li>Compliance requirements</li>
+</ul>
+<p><strong>Ferramentas Multi-Cloud:</strong></p>
+<ul>
+<li>Terraform (supports all major clouds)</li>
+<li>Kubernetes (portable across clouds)</li>
+<li>Ansible (configuration management)</li>
+</ul>
+<hr>
+<h2>11. Monitoramento e Observabilidade</h2>
+<h3>11.1 Conceitos Fundamentais</h3>
+<p><strong>Three Pillars of Observability:</strong></p>
+<ol>
+<li><strong>Metrics</strong>: Medições numéricas ao longo do tempo</li>
+<li><strong>Logs</strong>: Eventos discretos com timestamps</li>
+<li><strong>Traces</strong>: Jornada de requests através do sistema</li>
+</ol>
+<p><strong>Tipos de Monitoramento:</strong></p>
+<ul>
+<li><strong>Infrastructure Monitoring</strong>: CPU, memória, disk, network</li>
+<li><strong>Application Performance Monitoring (APM)</strong>: Response times, errors</li>
+<li><strong>Business Metrics</strong>: KPIs, conversions</li>
+<li><strong>Security Monitoring</strong>: Intrusion detection, anomalias</li>
+</ul>
+<h3>11.2 Prometheus - Padrão para Metrics</h3>
+<p><strong>Arquitetura:</strong></p>
+<ul>
+<li>Pull-based model</li>
+<li>Time-series database</li>
+<li>PromQL query language</li>
+<li>Alertmanager para alertas</li>
+</ul>
+<p><strong>prometheus.yml Configuration:</strong></p>
+<pre><code class="language-yaml">global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - &quot;first_rules.yml&quot;
+  - &quot;second_rules.yml&quot;
+
+scrape_configs:
+  - job_name: &#39;prometheus&#39;
+    static_configs:
+      - targets: [&#39;localhost:9090&#39;]
+
+  - job_name: &#39;node&#39;
+    static_configs:
+      - targets: [&#39;localhost:9100&#39;]
+
+  - job_name: &#39;kubernetes-apiservers&#39;
+    kubernetes_sd_configs:
+    - role: endpoints
+    scheme: https
+    tls_config:
+      ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+</code></pre>
+<p><strong>PromQL Examples:</strong></p>
+<pre><code class="language-promql"># CPU usage
+100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=&quot;idle&quot;}[5m])) * 100)
+
+# Memory usage
+(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100
+
+# HTTP request rate
+rate(http_requests_total[5m])
+
+# Error rate
+rate(http_requests_total{status=~&quot;5..&quot;}[5m]) / rate(http_requests_total[5m])
+
+# 95th percentile response time
+histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))
+</code></pre>
+<p><strong>Alerting Rules:</strong></p>
+<pre><code class="language-yaml">groups:
+- name: example
+  rules:
+  - alert: HighCPUUsage
+    expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=&quot;idle&quot;}[5m])) * 100) &gt; 80
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: &quot;High CPU usage detected&quot;
+      description: &quot;CPU usage is above 80% for more than 2 minutes&quot;
+
+  - alert: ServiceDown
+    expr: up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: &quot;Service {{ $labels.instance }} is down&quot;
+</code></pre>
+<h3>11.3 Grafana - Visualização</h3>
+<p><strong>Dashboard Configuration:</strong></p>
+<pre><code class="language-json">{
+  &quot;dashboard&quot;: {
+    &quot;title&quot;: &quot;System Overview&quot;,
+    &quot;panels&quot;: [
+      {
+        &quot;title&quot;: &quot;CPU Usage&quot;,
+        &quot;type&quot;: &quot;graph&quot;,
+        &quot;targets&quot;: [
+          {
+            &quot;expr&quot;: &quot;100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\&quot;idle\&quot;}[5m])) * 100)&quot;,
+            &quot;legendFormat&quot;: &quot;CPU Usage %&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<p><strong>Data Sources:</strong></p>
+<ul>
+<li>Prometheus</li>
+<li>InfluxDB</li>
+<li>ElasticSearch</li>
+<li>CloudWatch</li>
+<li>Azure Monitor</li>
+</ul>
+<h3>11.4 ELK Stack (Elasticsearch, Logstash, Kibana)</h3>
+<p><strong>Logstash Configuration:</strong></p>
+<pre><code class="language-ruby">input {
+  beats {
+    port =&gt; 5044
+  }
+  file {
+    path =&gt; &quot;/var/log/nginx/access.log&quot;
+    start_position =&gt; &quot;beginning&quot;
+  }
+}
+
+filter {
+  if [fileset][module] == &quot;nginx&quot; {
+    if [fileset][name] == &quot;access&quot; {
+      grok {
+        match =&gt; { &quot;message&quot; =&gt; &quot;%{NGINXACCESS}&quot; }
+      }
+    }
+  }
+}
+
+output {
+  elasticsearch {
+    hosts =&gt; [&quot;localhost:9200&quot;]
+    index =&gt; &quot;logstash-%{+YYYY.MM.dd}&quot;
+  }
+}
+</code></pre>
+<p><strong>Filebeat Configuration:</strong></p>
+<pre><code class="language-yaml">filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/*.log
+    - /var/log/nginx/*.log
+
+output.logstash:
+  hosts: [&quot;logstash:5044&quot;]
+
+processors:
+- add_host_metadata:
+    when.not.contains.tags: forwarded
+</code></pre>
+<h3>11.5 Modern Observability Stack</h3>
+<p><strong>Jaeger - Distributed Tracing:</strong></p>
+<pre><code class="language-yaml"># Docker Compose for Jaeger
+version: &#39;3.7&#39;
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - &quot;16686:16686&quot;
+      - &quot;14268:14268&quot;
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+</code></pre>
+<p><strong>OpenTelemetry:</strong></p>
+<ul>
+<li>Unified observability framework</li>
+<li>Vendor-neutral APIs</li>
+<li>Auto-instrumentation for popular languages</li>
+</ul>
+<p><strong>Loki - Log Aggregation:</strong></p>
+<pre><code class="language-yaml"># Loki configuration
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+ingester:
+  lifecycler:
+    address: 127.0.0.1
+    ring:
+      kvstore:
+        store: inmemory
+      replication_factor: 1
+
+schema_config:
+  configs:
+    - from: 2020-10-24
+      store: boltdb-shipper
+      object_store: filesystem
+      schema: v11
+      index:
+        prefix: index_
+        period: 24h
+
+storage_config:
+  boltdb_shipper:
+    active_index_directory: /loki/boltdb-shipper-active
+    cache_location: /loki/boltdb-shipper-cache
+    shared_store: filesystem
+  filesystem:
+    directory: /loki/chunks
+
+limits_config:
+  enforce_metric_name: false
+  reject_old_samples: true
+  reject_old_samples_max_age: 168h
+</code></pre>
+<p><strong>Promtail (Loki Agent):</strong></p>
+<pre><code class="language-yaml">server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+- job_name: system
+  static_configs:
+  - targets:
+      - localhost
+    labels:
+      job: varlogs
+      __path__: /var/log/*log
+</code></pre>
+<hr>
+<h2>12. Segurança DevSecOps</h2>
+<h3>12.1 Conceitos Fundamentais</h3>
+<p><strong>DevSecOps Philosophy:</strong></p>
+<ul>
+<li>Security as Code</li>
+<li>Shift Left Security</li>
+<li>Continuous Security</li>
+<li>Automated Security Testing</li>
+</ul>
+<p><strong>Security Throughout SDLC:</strong></p>
+<ul>
+<li><strong>Plan</strong>: Threat modeling, security requirements</li>
+<li><strong>Code</strong>: Static analysis, secure coding practices</li>
+<li><strong>Build</strong>: Dependency scanning, SAST</li>
+<li><strong>Test</strong>: DAST, penetration testing</li>
+<li><strong>Deploy</strong>: Infrastructure security, IAST</li>
+<li><strong>Monitor</strong>: Security monitoring, incident response</li>
+</ul>
+<h3>12.2 Container Security</h3>
+<p><strong>Docker Security Best Practices:</strong></p>
+<pre><code class="language-dockerfile"># Use specific, minimal base images
+FROM node:16-alpine
+
+# Don&#39;t run as root
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+# Copy only necessary files
+COPY package*.json ./
+RUN npm ci --only=production
+
+# Use non-root user
+USER nextjs
+
+# Use COPY instead of ADD
+COPY --chown=nextjs:nodejs . .
+
+# Expose specific ports only
+EXPOSE 3000
+
+# Use exec form for CMD
+CMD [&quot;npm&quot;, &quot;start&quot;]
+</code></pre>
+<p><strong>Image Scanning:</strong></p>
+<pre><code class="language-bash"># Trivy
+trivy image nginx:latest
+
+# Clair
+docker run -d --name clair -p 6060:6060 quay.io/coreos/clair:latest
+
+# Docker Scout
+docker scout cves nginx:latest
+</code></pre>
+<h3>12.3 Kubernetes Security</h3>
+<p><strong>Pod Security Standards:</strong></p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-pod
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    fsGroup: 1000
+  containers:
+  - name: app
+    image: myapp:latest
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+        - ALL
+      readOnlyRootFilesystem: true
+    resources:
+      limits:
+        memory: &quot;128Mi&quot;
+        cpu: &quot;500m&quot;
+      requests:
+        memory: &quot;64Mi&quot;
+        cpu: &quot;250m&quot;
+</code></pre>
+<p><strong>Network Policies:</strong></p>
+<pre><code class="language-yaml">apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+spec:
+  podSelector:
+    matchLabels:
+      role: backend
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          role: frontend
+    ports:
+    - protocol: TCP
+      port: 8080
+</code></pre>
+<p><strong>RBAC (Role-Based Access Control):</strong></p>
+<pre><code class="language-yaml">apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+- apiGroups: [&quot;&quot;]
+  resources: [&quot;pods&quot;]
+  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pods
+  namespace: default
+subjects:
+- kind: User
+  name: jane
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io
+</code></pre>
+<h3>12.4 Secrets Management</h3>
+<p><strong>HashiCorp Vault:</strong></p>
+<pre><code class="language-bash"># Start Vault dev server
+vault server -dev
+
+# Set environment
+export VAULT_ADDR=&#39;http://127.0.0.1:8200&#39;
+export VAULT_TOKEN=&#39;dev-only-token&#39;
+
+# Store secrets
+vault kv put secret/myapp/config username=admin password=secret
+
+# Retrieve secrets
+vault kv get secret/myapp/config
+
+# Use in applications
+vault kv get -field=password secret/myapp/config
+</code></pre>
+<p><strong>Kubernetes Secrets:</strong></p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: MWYyZDFlMmU2N2Rm
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  template:
+    spec:
+      containers:
+      - name: myapp
+        image: myapp:latest
+        env:
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
+</code></pre>
+<p><strong>AWS Secrets Manager:</strong></p>
+<pre><code class="language-python">import boto3
+import json
+
+def get_secret():
+    secret_name = &quot;prod/myapp/db&quot;
+    region_name = &quot;us-west-2&quot;
+
+    session = boto3.session.Session()
+    client = session.client(
+        service_name=&#39;secretsmanager&#39;,
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        raise e
+
+    secret = get_secret_value_response[&#39;SecretString&#39;]
+    return json.loads(secret)
+</code></pre>
+<h3>12.5 Security Scanning Tools</h3>
+<p><strong>Static Application Security Testing (SAST):</strong></p>
+<ul>
+<li><strong>SonarQube</strong>: Code quality and security</li>
+<li><strong>Checkmarx</strong>: Enterprise SAST</li>
+<li><strong>Bandit</strong>: Python security linter</li>
+</ul>
+<p><strong>Dynamic Application Security Testing (DAST):</strong></p>
+<ul>
+<li><strong>OWASP ZAP</strong>: Open source web app scanner</li>
+<li><strong>Burp Suite</strong>: Professional web security testing</li>
+</ul>
+<p><strong>Dependency Scanning:</strong></p>
+<ul>
+<li><strong>Snyk</strong>: Vulnerability scanning for dependencies</li>
+<li><strong>WhiteSource</strong>: Open source security management</li>
+<li><strong>npm audit</strong>: For Node.js projects</li>
+</ul>
+<p><strong>Infrastructure as Code Security:</strong></p>
+<ul>
+<li><strong>Checkov</strong>: Terraform/CloudFormation scanner</li>
+<li><strong>tfsec</strong>: Terraform security scanner</li>
+<li><strong>Terrascan</strong>: Multi-cloud IaC scanner</li>
+</ul>
+<p><strong>CI/CD Integration Example:</strong></p>
+<pre><code class="language-yaml">name: Security Scan
+
+on: [push, pull_request]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: &#39;myapp:${{ github.sha }}&#39;
+        format: &#39;sarif&#39;
+        output: &#39;trivy-results.sarif&#39;
+    
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: &#39;trivy-results.sarif&#39;
+</code></pre>
+<hr>
+<h2>13. Ferramentas de Configuração</h2>
+<h3>13.1 Ansible - Já Abordado em IaC</h3>
+<h3>13.2 Chef</h3>
+<p><strong>Conceitos:</strong></p>
+<ul>
+<li><strong>Cookbooks</strong>: Collections of recipes</li>
+<li><strong>Recipes</strong>: Configuration definitions</li>
+<li><strong>Nodes</strong>: Managed servers</li>
+<li><strong>Chef Server</strong>: Central management</li>
+</ul>
+<p><strong>Recipe Example:</strong></p>
+<pre><code class="language-ruby"># Install Apache
+package &#39;apache2&#39; do
+  action :install
+end
+
+# Start and enable Apache service
+service &#39;apache2&#39; do
+  action [:start, :enable]
+end
+
+# Create index.html
+file &#39;/var/www/html/index.html&#39; do
+  content &#39;&lt;h1&gt;Hello from Chef!&lt;/h1&gt;&#39;
+  mode &#39;0644&#39;
+  owner &#39;www-data&#39;
+  group &#39;www-data&#39;
+end
+</code></pre>
+<p><strong>Cookbook Structure:</strong></p>
+<pre><code>mycookbook/
+  metadata.rb
+  README.md
+  recipes/
+    default.rb
+  templates/
+    default/
+      apache.conf.erb
+  files/
+    default/
+  attributes/
+    default.rb
+  libraries/
+  definitions/
+</code></pre>
+<h3>13.3 Puppet</h3>
+<p><strong>Concepts:</strong></p>
+<ul>
+<li><strong>Manifests</strong>: Configuration files</li>
+<li><strong>Modules</strong>: Reusable components</li>
+<li><strong>Classes</strong>: Collections of resources</li>
+<li><strong>Facts</strong>: System information</li>
+</ul>
+<p><strong>Manifest Example:</strong></p>
+<pre><code class="language-puppet"># Install and configure Apache
+class apache {
+  package { &#39;apache2&#39;:
+    ensure =&gt; installed,
+  }
+
+  service { &#39;apache2&#39;:
+    ensure     =&gt; running,
+    enable     =&gt; true,
+    require    =&gt; Package[&#39;apache2&#39;],
+  }
+
+  file { &#39;/var/www/html/index.html&#39;:
+    ensure  =&gt; file,
+    content =&gt; &#39;&lt;h1&gt;Hello from Puppet!&lt;/h1&gt;&#39;,
+    owner   =&gt; &#39;www-data&#39;,
+    group   =&gt; &#39;www-data&#39;,
+    mode    =&gt; &#39;0644&#39;,
+    require =&gt; Package[&#39;apache2&#39;],
+  }
+}
+
+include apache
+</code></pre>
+<h3>13.4 SaltStack</h3>
+<p><strong>Architecture:</strong></p>
+<ul>
+<li><strong>Salt Master</strong>: Central server</li>
+<li><strong>Salt Minions</strong>: Managed nodes</li>
+<li><strong>States</strong>: Configuration definitions</li>
+<li><strong>Pillars</strong>: Secure data</li>
+</ul>
+<p><strong>State Example:</strong></p>
+<pre><code class="language-yaml"># states/apache/init.sls
+apache2:
+  pkg.installed
+
+apache2-service:
+  service.running:
+    - name: apache2
+    - enable: True
+    - require:
+      - pkg: apache2
+
+/var/www/html/index.html:
+  file.managed:
+    - source: salt://apache/files/index.html
+    - user: www-data
+    - group: www-data
+    - mode: 644
+    - require:
+      - pkg: apache2
+</code></pre>
+<hr>
+<h2>14. GitOps</h2>
+<h3>14.1 Conceitos Fundamentais</h3>
+<p><strong>GitOps Principles:</strong></p>
+<ol>
+<li><strong>Declarative</strong>: System state described declaratively</li>
+<li><strong>Versioned and Immutable</strong>: Git as single source of truth</li>
+<li><strong>Pulled Automatically</strong>: Software agents pull changes</li>
+<li><strong>Continuously Reconciled</strong>: Ensure actual state matches desired state</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Improved security (no direct cluster access)</li>
+<li>Better auditability (all changes in Git)</li>
+<li>Easier rollbacks</li>
+<li>Consistent deployments</li>
+</ul>
+<h3>14.2 ArgoCD</h3>
+<p><strong>Installation:</strong></p>
+<pre><code class="language-bash"># Install ArgoCD
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+# Access UI
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+
+# Get admin password
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath=&quot;{.data.password}&quot; | base64 -d
+</code></pre>
+<p><strong>Application Manifest:</strong></p>
+<pre><code class="language-yaml">apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/myorg/myapp-config
+    targetRevision: HEAD
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+</code></pre>
+<p><strong>Repository Structure for GitOps:</strong></p>
+<pre><code>myapp-config/
+  k8s/
+    deployment.yaml
+    service.yaml
+    ingress.yaml
+    kustomization.yaml
+  overlays/
+    dev/
+      kustomization.yaml
+      patch-deployment.yaml
+    staging/
+      kustomization.yaml
+      patch-deployment.yaml
+    prod/
+      kustomization.yaml
+      patch-deployment.yaml
+</code></pre>
+<h3>14.3 Flux</h3>
+<p><strong>Installation:</strong></p>
+<pre><code class="language-bash"># Install Flux CLI
+curl -s https://fluxcd.io/install.sh | sudo bash
+
+# Bootstrap Flux
+flux bootstrap github \
+  --owner=myorg \
+  --repository=fleet-infra \
+  --branch=main \
+  --path=./clusters/my-cluster \
+  --personal
+</code></pre>
+<p><strong>GitRepository Source:</strong></p>
+<pre><code class="language-yaml">apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: myapp
+  namespace: flux-system
+spec:
+  interval: 1m
+  ref:
+    branch: main
+  url: https://github.com/myorg/myapp-config
+</code></pre>
+<p><strong>Kustomization:</strong></p>
+<pre><code class="language-yaml">apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: myapp
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: &quot;./k8s&quot;
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: myapp
+  targetNamespace: default
+</code></pre>
+<h3>14.4 Kustomize</h3>
+<p><strong>Base Configuration:</strong></p>
+<pre><code class="language-yaml"># base/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- deployment.yaml
+- service.yaml
+
+commonLabels:
+  app: myapp
+</code></pre>
+<p><strong>Overlay for Production:</strong></p>
+<pre><code class="language-yaml"># overlays/prod/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+- ../../base
+
+patchesStrategicMerge:
+- patch-deployment.yaml
+
+replicas:
+- name: myapp
+  count: 5
+</code></pre>
+<hr>
+<h2>15. Site Reliability Engineering (SRE)</h2>
+<h3>15.1 Conceitos Fundamentais</h3>
+<p><strong>SRE Principles:</strong></p>
+<ul>
+<li><strong>Service Level Objectives (SLOs)</strong>: Target reliability levels</li>
+<li><strong>Service Level Indicators (SLIs)</strong>: Metrics that matter</li>
+<li><strong>Service Level Agreements (SLAs)</strong>: Contractual obligations</li>
+<li><strong>Error Budgets</strong>: Allowed unreliability</li>
+<li><strong>Toil Reduction</strong>: Minimize manual work</li>
+</ul>
+<p><strong>SLI Examples:</strong></p>
+<ul>
+<li>Request latency</li>
+<li>Error rate</li>
+<li>System throughput</li>
+<li>Availability</li>
+</ul>
+<p><strong>SLO Examples:</strong></p>
+<ul>
+<li>99.9% availability (43.8 minutes downtime per month)</li>
+<li>95% of requests complete in &lt;200ms</li>
+<li>Error rate &lt;0.1%</li>
+</ul>
+<h3>15.2 Error Budgets</h3>
+<p><strong>Calculation:</strong></p>
+<pre><code>Error Budget = 100% - SLO
+Example: 99.9% SLO = 0.1% error budget
+
+Monthly error budget (30 days):
+30 days × 24 hours × 60 minutes × 0.1% = 43.2 minutes
+</code></pre>
+<p><strong>Policy Example:</strong></p>
+<ul>
+<li>If error budget &gt; 0: Continue normal development velocity</li>
+<li>If error budget = 0: Freeze features, focus on reliability</li>
+</ul>
+<h3>15.3 Incident Management</h3>
+<p><strong>Incident Response Process:</strong></p>
+<ol>
+<li><strong>Detection</strong>: Automated monitoring alerts</li>
+<li><strong>Response</strong>: On-call engineer investigates</li>
+<li><strong>Mitigation</strong>: Immediate steps to reduce impact</li>
+<li><strong>Resolution</strong>: Fix root cause</li>
+<li><strong>Post-mortem</strong>: Learn and improve</li>
+</ol>
+<p><strong>Post-mortem Template:</strong></p>
+<pre><code class="language-markdown"># Incident Post-mortem: [Title]
+
+## Summary
+Brief description of incident
+
+## Impact
+- Duration: X hours
+- Users affected: N users
+- Services affected: [list]
+
+## Root Cause
+Detailed explanation of what went wrong
+
+## Timeline
+- 14:00 - Incident began
+- 14:05 - Alerts fired
+- 14:10 - Incident response team engaged
+- 14:30 - Mitigation deployed
+- 15:00 - Full resolution
+
+## Action Items
+1. [ ] Fix root cause
+2. [ ] Improve monitoring
+3. [ ] Update runbooks
+4. [ ] Conduct training
+
+## Lessons Learned
+What we learned and how to prevent similar incidents
+</code></pre>
+<h3>15.4 Monitoring and Alerting Best Practices</h3>
+<p><strong>Alert Fatigue Prevention:</strong></p>
+<ul>
+<li>Alert on symptoms, not causes</li>
+<li>Use appropriate severity levels</li>
+<li>Implement alert suppression during maintenance</li>
+<li>Regular alert review and cleanup</li>
+</ul>
+<p><strong>Alerting Runbooks:</strong></p>
+<pre><code class="language-markdown"># Alert: High CPU Usage
+
+## Description
+CPU usage is above 80% for more than 5 minutes
+
+## Severity
+Warning
+
+## Investigation Steps
+1. Check current CPU usage: `top` or `htop`
+2. Identify high-CPU processes
+3. Check system logs for errors
+4. Verify if this is expected load
+
+## Mitigation
+1. If caused by runaway process: kill process
+2. If legitimate high load: scale horizontally
+3. If persistent: investigate application performance
+
+## Escalation
+If unable to resolve within 30 minutes, escalate to [team]
+</code></pre>
+<hr>
+<h2>16. Microservices e Arquitetura</h2>
+<h3>16.1 Conceitos de Microservices</h3>
+<p><strong>Características:</strong></p>
+<ul>
+<li><strong>Single Responsibility</strong>: Each service does one thing well</li>
+<li><strong>Decentralized</strong>: Independent development and deployment</li>
+<li><strong>Technology Agnostic</strong>: Different tech stacks per service</li>
+<li><strong>Failure Isolation</strong>: Failures don&#39;t cascade</li>
+<li><strong>Organized around Business Capabilities</strong></li>
+</ul>
+<p><strong>Design Patterns:</strong></p>
+<p><strong>API Gateway:</strong></p>
+<pre><code class="language-yaml"># Kong API Gateway Example
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: api-gateway
+proxy:
+  path: /api/v1
+upstream:
+  algorithm: round-robin
+route:
+  strip_path: true
+</code></pre>
+<p><strong>Service Discovery:</strong></p>
+<pre><code class="language-yaml"># Consul Service Discovery
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+  annotations:
+    consul.hashicorp.com/service-name: user-service
+    consul.hashicorp.com/service-port: &quot;8080&quot;
+spec:
+  selector:
+    app: user-service
+  ports:
+  - port: 8080
+    targetPort: 8080
+</code></pre>
+<p><strong>Circuit Breaker Pattern:</strong></p>
+<pre><code class="language-python"># Python example with pybreaker
+import pybreaker
+
+# Create circuit breaker
+db_breaker = pybreaker.CircuitBreaker(
+    fail_max=5,
+    reset_timeout=30,
+    exclude=[KeyError]
+)
+
+@db_breaker
+def call_external_service():
+    # Make external call
+    response = requests.get(&#39;https://api.example.com/data&#39;)
+    return response.json()
+
+# Usage
+try:
+    data = call_external_service()
+except pybreaker.CircuitBreakerError:
+    # Circuit is open, handle gracefully
+    data = get_cached_data()
+</code></pre>
+<h3>16.2 Service Mesh</h3>
+<p><strong>Istio - Popular Service Mesh:</strong></p>
+<p><strong>Installation:</strong></p>
+<pre><code class="language-bash"># Install Istio
+curl -L https://istio.io/downloadIstio | sh -
+istioctl install --set values.defaultRevision=default
+
+# Enable sidecar injection
+kubectl label namespace default istio-injection=enabled
+</code></pre>
+<p><strong>Traffic Management:</strong></p>
+<pre><code class="language-yaml"># VirtualService for traffic routing
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: jason
+    route:
+    - destination:
+        host: reviews
+        subset: v2
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+---
+# DestinationRule for load balancing
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: reviews
+spec:
+  host: reviews
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+</code></pre>
+<p><strong>Security Policies:</strong></p>
+<pre><code class="language-yaml"># PeerAuthentication for mTLS
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: production
+spec:
+  mtls:
+    mode: STRICT
+---
+# AuthorizationPolicy
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-read
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  rules:
+  - from:
+    - source:
+        principals: [&quot;cluster.local/ns/production/sa/sleep&quot;]
+    to:
+    - operation:
+        methods: [&quot;GET&quot;]
+</code></pre>
+<h3>16.3 Event-Driven Architecture</h3>
+<p><strong>Message Brokers:</strong></p>
+<p><strong>Apache Kafka:</strong></p>
+<pre><code class="language-yaml"># Kafka deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      containers:
+      - name: kafka
+        image: confluentinc/cp-kafka:latest
+        env:
+        - name: KAFKA_ZOOKEEPER_CONNECT
+          value: zookeeper:2181
+        - name: KAFKA_ADVERTISED_LISTENERS
+          value: PLAINTEXT://kafka:9092
+        - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
+          value: &quot;1&quot;
+</code></pre>
+<p><strong>RabbitMQ:</strong></p>
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+      - name: rabbitmq
+        image: rabbitmq:3-management
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: admin
+        - name: RABBITMQ_DEFAULT_PASS
+          value: password
+</code></pre>
+<hr>
+<h2>17. Projetos Práticos</h2>
+<h3>17.1 Projeto 1: Pipeline CI/CD Completa</h3>
+<p><strong>Objetivo:</strong> Criar pipeline completa para aplicação web</p>
+<p><strong>Componentes:</strong></p>
+<ol>
+<li>Aplicação Node.js simples</li>
+<li>Dockerfile</li>
+<li>GitHub Actions workflow</li>
+<li>Deploy no Kubernetes</li>
+<li>Monitoramento com Prometheus</li>
+</ol>
+<p><strong>Estrutura do Projeto:</strong></p>
+<pre><code>my-web-app/
+├── app/
+│   ├── package.json
+│   ├── server.js
+│   └── public/
+├── k8s/
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   └── ingress.yaml
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml
+├── Dockerfile
+└── docker-compose.yml
+</code></pre>
+<p><strong>Dockerfile:</strong></p>
+<pre><code class="language-dockerfile">FROM node:16-alpine
+
+WORKDIR /app
+
+COPY app/package*.json ./
+RUN npm ci --only=production
+
+COPY app/ .
+
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+USER nextjs
+
+EXPOSE 3000
+
+CMD [&quot;node&quot;, &quot;server.js&quot;]
+</code></pre>
+<p><strong>GitHub Actions Workflow:</strong></p>
+<pre><code class="language-yaml">name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: &#39;16&#39;
+        cache: &#39;npm&#39;
+        cache-dependency-path: app/package-lock.json
+    
+    - name: Install dependencies
+      run: cd app &amp;&amp; npm ci
+    
+    - name: Run tests
+      run: cd app &amp;&amp; npm test
+    
+    - name: Run security audit
+      run: cd app &amp;&amp; npm audit
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Docker image
+      run: docker build -t my-web-app:${{ github.sha }} .
+    
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: &#39;my-web-app:${{ github.sha }}&#39;
+        format: &#39;sarif&#39;
+        output: &#39;trivy-results.sarif&#39;
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == &#39;refs/heads/main&#39;
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to Kubernetes
+      run: |
+        # Update image tag in deployment
+        sed -i &quot;s/IMAGE_TAG/${{ github.sha }}/g&quot; k8s/deployment.yaml
+        kubectl apply -f k8s/
+</code></pre>
+<h3>17.2 Projeto 2: Infraestrutura Multi-Ambiente com Terraform</h3>
+<p><strong>Objetivo:</strong> Criar infraestrutura AWS para dev, staging, e prod</p>
+<p><strong>Estrutura:</strong></p>
+<pre><code>terraform-infrastructure/
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── terraform.tfvars
+│   │   └── backend.tf
+│   ├── staging/
+│   └── prod/
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   ├── rds/
+│   └── s3/
+└── shared/
+    ├── variables.tf
+    └── outputs.tf
+</code></pre>
+<p><strong>VPC Module:</strong></p>
+<pre><code class="language-hcl"># modules/vpc/main.tf
+resource &quot;aws_vpc&quot; &quot;main&quot; {
+  cidr_block           = var.vpc_cidr
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags = {
+    Name        = &quot;${var.environment}-vpc&quot;
+    Environment = var.environment
+  }
+}
+
+resource &quot;aws_subnet&quot; &quot;public&quot; {
+  count = length(var.public_subnets)
+
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.public_subnets[count.index]
+  availability_zone       = var.azs[count.index]
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name        = &quot;${var.environment}-public-${count.index + 1}&quot;
+    Environment = var.environment
+    Type        = &quot;public&quot;
+  }
+}
+
+resource &quot;aws_subnet&quot; &quot;private&quot; {
+  count = length(var.private_subnets)
+
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.private_subnets[count.index]
+  availability_zone = var.azs[count.index]
+
+  tags = {
+    Name        = &quot;${var.environment}-private-${count.index + 1}&quot;
+    Environment = var.environment
+    Type        = &quot;private&quot;
+  }
+}
+</code></pre>
+<h3>17.3 Projeto 3: Observabilidade Stack Completa</h3>
+<p><strong>Objetivo:</strong> Implementar observabilidade completa com Prometheus, Grafana, Loki, Jaeger</p>
+<p><strong>docker-compose.yml:</strong></p>
+<pre><code class="language-yaml">version: &#39;3.8&#39;
+
+services:
+  # Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - &quot;9090:9090&quot;
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - &#39;--config.file=/etc/prometheus/prometheus.yml&#39;
+      - &#39;--storage.tsdb.path=/prometheus&#39;
+      - &#39;--web.console.libraries=/etc/prometheus/console_libraries&#39;
+      - &#39;--web.console.templates=/etc/prometheus/consoles&#39;
+      - &#39;--storage.tsdb.retention.time=200h&#39;
+      - &#39;--web.enable-lifecycle&#39;
+
+  # Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - &quot;3000:3000&quot;
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+
+  # Loki
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    ports:
+      - &quot;3100:3100&quot;
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki:/etc/loki
+
+  # Promtail
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    volumes:
+      - /var/log:/var/log:ro
+      - ./promtail:/etc/promtail
+    command: -config.file=/etc/promtail/config.yml
+
+  # Jaeger
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      - &quot;16686:16686&quot;
+      - &quot;14268:14268&quot;
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+
+  # Node Exporter
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - &quot;9100:9100&quot;
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - &#39;--path.procfs=/host/proc&#39;
+      - &#39;--path.rootfs=/rootfs&#39;
+      - &#39;--path.sysfs=/host/sys&#39;
+      - &#39;--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($|/)&#39;
+
+volumes:
+  prometheus_data:
+  grafana_data:
+</code></pre>
+<h3>17.4 Projeto 4: GitOps com ArgoCD e Kustomize</h3>
+<p><strong>Objetivo:</strong> Implementar GitOps completo com ambientes separados</p>
+<p><strong>Estrutura do Repositório:</strong></p>
+<pre><code>gitops-demo/
+├── apps/
+│   └── my-app/
+│       ├── base/
+│       │   ├── kustomization.yaml
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   └── configmap.yaml
+│       └── overlays/
+│           ├── dev/
+│           │   ├── kustomization.yaml
+│           │   └── patch-replica.yaml
+│           ├── staging/
+│           │   ├── kustomization.yaml
+│           │   └── patch-replica.yaml
+│           └── prod/
+│               ├── kustomization.yaml
+│               └── patch-replica.yaml
+├── argocd/
+│   └── applications/
+│       ├── my-app-dev.yaml
+│       ├── my-app-staging.yaml
+│       └── my-app-prod.yaml
+└── infrastructure/
+    └── namespaces/
+        ├── dev.yaml
+        ├── staging.yaml
+        └── prod.yaml
+</code></pre>
+<p><strong>Base Kustomization:</strong></p>
+<pre><code class="language-yaml"># apps/my-app/base/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- deployment.yaml
+- service.yaml
+- configmap.yaml
+
+commonLabels:
+  app: my-app
+  version: v1.0.0
+
+images:
+- name: my-app
+  newTag: latest
+</code></pre>
+<p><strong>Production Overlay:</strong></p>
+<pre><code class="language-yaml"># apps/my-app/overlays/prod/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: production
+
+bases:
+- ../../base
+
+patchesStrategicMerge:
+- patch-replica.yaml
+
+images:
+- name: my-app
+  newTag: v1.2.0
+
+configMapGenerator:
+- name: app-config
+  literals:
+  - ENVIRONMENT=production
+  - LOG_LEVEL=info
+  behavior: merge
+</code></pre>
+<p><strong>ArgoCD Application:</strong></p>
+<pre><code class="language-yaml"># argocd/applications/my-app-prod.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app-prod
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/myorg/gitops-demo
+    targetRevision: main
+    path: apps/my-app/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+</code></pre>
+<h3>17.5 Projeto 5: Microservices com Service Mesh</h3>
+<p><strong>Objetivo:</strong> Implementar arquitetura de microservices com Istio</p>
+<p><strong>Aplicações:</strong></p>
+<ul>
+<li>User Service (Node.js)</li>
+<li>Order Service (Python)</li>
+<li>Product Service (Go)</li>
+<li>API Gateway</li>
+<li>Frontend (React)</li>
+</ul>
+<p><strong>Istio Configuration:</strong></p>
+<pre><code class="language-yaml"># Gateway para tráfego externo
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: microservices-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - &quot;*&quot;
+
+---
+# VirtualService para roteamento
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: microservices
+spec:
+  hosts:
+  - &quot;*&quot;
+  gateways:
+  - microservices-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /api/users
+    route:
+    - destination:
+        host: user-service
+        port:
+          number: 3000
+  - match:
+    - uri:
+        prefix: /api/orders
+    route:
+    - destination:
+        host: order-service
+        port:
+          number: 5000
+  - match:
+    - uri:
+        prefix: /api/products
+    route:
+    - destination:
+        host: product-service
+        port:
+          number: 8080
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: frontend
+        port:
+          number: 80
+
+---
+# DestinationRule com circuit breaker
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: user-service
+spec:
+  host: user-service
+  trafficPolicy:
+    connectionPool:
+      tcp:
+        maxConnections: 10
+      http:
+        http1MaxPendingRequests: 10
+        maxRequestsPerConnection: 2
+    circuitBreaker:
+      consecutiveErrors: 3
+      interval: 30s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+</code></pre>
+<hr>
+<h2>18. Certificações DevOps Recomendadas</h2>
+<h3>18.1 Certificações AWS</h3>
+<ul>
+<li><strong>AWS Certified DevOps Engineer - Professional</strong></li>
+<li><strong>AWS Certified Solutions Architect - Associate</strong></li>
+<li><strong>AWS Certified Developer - Associate</strong></li>
+</ul>
+<h3>18.2 Certificações Kubernetes</h3>
+<ul>
+<li><strong>Certified Kubernetes Administrator (CKA)</strong></li>
+<li><strong>Certified Kubernetes Application Developer (CKAD)</strong></li>
+<li><strong>Certified Kubernetes Security Specialist (CKS)</strong></li>
+</ul>
+<h3>18.3 Certificações Azure</h3>
+<ul>
+<li><strong>Microsoft Azure DevOps Engineer Expert</strong></li>
+<li><strong>Microsoft Azure Solutions Architect Expert</strong></li>
+</ul>
+<h3>18.4 Certificações Google Cloud</h3>
+<ul>
+<li><strong>Google Cloud Professional DevOps Engineer</strong></li>
+<li><strong>Google Cloud Professional Cloud Architect</strong></li>
+</ul>
+<h3>18.5 Outras Certificações Relevantes</h3>
+<ul>
+<li><strong>Docker Certified Associate</strong></li>
+<li><strong>HashiCorp Terraform Associate</strong></li>
+<li><strong>Red Hat Certified System Administrator</strong></li>
+</ul>
+<hr>
+<h2>19. Roadmap de Estudos Recomendado</h2>
+<h3>19.1 Nível Iniciante (2-3 meses)</h3>
+<p><strong>Semana 1-2: Fundamentos</strong></p>
+<ul>
+<li>Linux básico e comandos essenciais</li>
+<li>Git e controle de versão</li>
+<li>Conceitos de rede básicos</li>
+</ul>
+<p><strong>Semana 3-4: Containerização</strong></p>
+<ul>
+<li>Docker fundamentals</li>
+<li>Dockerfile e melhores práticas</li>
+<li>Docker Compose</li>
+</ul>
+<p><strong>Semana 5-6: Cloud Basics</strong></p>
+<ul>
+<li>Escolher um cloud provider (AWS recomendado)</li>
+<li>Conceitos básicos de cloud</li>
+<li>EC2, S3, VPC básicos</li>
+</ul>
+<p><strong>Semana 7-8: CI/CD Básico</strong></p>
+<ul>
+<li>GitHub Actions ou GitLab CI</li>
+<li>Pipeline simples</li>
+<li>Deploy automatizado</li>
+</ul>
+<p><strong>Semana 9-12: Projeto Prático</strong></p>
+<ul>
+<li>Aplicação web simples</li>
+<li>Pipeline CI/CD completa</li>
+<li>Deploy no cloud</li>
+</ul>
+<h3>19.2 Nível Intermediário (3-4 meses)</h3>
+<p><strong>Mês 1: Kubernetes</strong></p>
+<ul>
+<li>Conceitos fundamentais</li>
+<li>Deployments, Services, ConfigMaps</li>
+<li>kubectl comandos essenciais</li>
+</ul>
+<p><strong>Mês 2: Infraestrutura como Código</strong></p>
+<ul>
+<li>Terraform basics</li>
+<li>AWS/Azure resource management</li>
+<li>Modules e best practices</li>
+</ul>
+<p><strong>Mês 3: Monitoramento</strong></p>
+<ul>
+<li>Prometheus e Grafana</li>
+<li>Alerting básico</li>
+<li>Log aggregation com ELK</li>
+</ul>
+<p><strong>Mês 4: Projeto Intermediário</strong></p>
+<ul>
+<li>Aplicação multi-tier</li>
+<li>Kubernetes deployment</li>
+<li>Monitoring completo</li>
+</ul>
+<h3>19.3 Nível Avançado (4-6 meses)</h3>
+<p><strong>Mês 1-2: Orquestração Avançada</strong></p>
+<ul>
+<li>Helm charts</li>
+<li>Kubernetes operators</li>
+<li>Service mesh (Istio)</li>
+</ul>
+<p><strong>Mês 3: GitOps e Advanced CI/CD</strong></p>
+<ul>
+<li>ArgoCD ou Flux</li>
+<li>Blue-green deployments</li>
+<li>Canary releases</li>
+</ul>
+<p><strong>Mês 4: Segurança DevSecOps</strong></p>
+<ul>
+<li>Container security</li>
+<li>Secrets management</li>
+<li>Security scanning integration</li>
+</ul>
+<p><strong>Mês 5: Observabilidade Avançada</strong></p>
+<ul>
+<li>Distributed tracing</li>
+<li>SRE practices</li>
+<li>Incident response</li>
+</ul>
+<p><strong>Mês 6: Projeto Master</strong></p>
+<ul>
+<li>Microservices architecture</li>
+<li>Complete observability stack</li>
+<li>Production-ready GitOps</li>
+</ul>
+<hr>
+<h2>20. Ferramentas por Categoria - Resumo Executivo</h2>
+<h3>20.1 Controle de Versão</h3>
+<ul>
+<li><strong>Git</strong> (essencial)</li>
+<li>GitHub/GitLab/Bitbucket</li>
+<li>Git Flow/GitHub Flow</li>
+</ul>
+<h3>20.2 Containerização</h3>
+<ul>
+<li><strong>Docker</strong> (fundamental)</li>
+<li>Podman (alternativa)</li>
+<li>BuildKit (advanced builds)</li>
+</ul>
+<h3>20.3 Orquestração</h3>
+<ul>
+<li><strong>Kubernetes</strong> (padrão da indústria)</li>
+<li><strong>Helm</strong> (package manager)</li>
+<li>Docker Swarm (simpler alternative)</li>
+</ul>
+<h3>20.4 CI/CD</h3>
+<ul>
+<li><strong>GitHub Actions</strong> (popular)</li>
+<li><strong>GitLab CI</strong> (integrated)</li>
+<li>Jenkins (traditional)</li>
+<li>ArgoCD (GitOps)</li>
+<li>CircleCI, Azure DevOps</li>
+</ul>
+<h3>20.5 Infrastructure as Code</h3>
+<ul>
+<li><strong>Terraform</strong> (multi-cloud leader)</li>
+<li>AWS CloudFormation</li>
+<li>Azure ARM Templates</li>
+<li>Pulumi (programming languages)</li>
+</ul>
+<h3>20.6 Configuration Management</h3>
+<ul>
+<li><strong>Ansible</strong> (agentless)</li>
+<li>Chef (Ruby-based)</li>
+<li>Puppet (declarative)</li>
+<li>SaltStack (Python-based)</li>
+</ul>
+<h3>20.7 Cloud Platforms</h3>
+<ul>
+<li><strong>AWS</strong> (market leader)</li>
+<li><strong>Microsoft Azure</strong></li>
+<li><strong>Google Cloud Platform</strong></li>
+<li>DigitalOcean, Linode (simpler)</li>
+</ul>
+<h3>20.8 Monitoring &amp; Observability</h3>
+<ul>
+<li><strong>Prometheus</strong> (metrics)</li>
+<li><strong>Grafana</strong> (visualization)</li>
+<li>ELK Stack (logging)</li>
+<li>Jaeger (tracing)</li>
+<li>DataDog, New Relic (commercial)</li>
+</ul>
+<h3>20.9 Security</h3>
+<ul>
+<li><strong>HashiCorp Vault</strong> (secrets)</li>
+<li>Snyk (vulnerability scanning)</li>
+<li>OWASP ZAP (security testing)</li>
+<li>Falco (runtime security)</li>
+</ul>
+<h3>20.10 Service Mesh</h3>
+<ul>
+<li><strong>Istio</strong> (feature-rich)</li>
+<li>Linkerd (lightweight)</li>
+<li>Consul Connect</li>
+</ul>
+<hr>
+<h2>21. Recursos de Estudo Complementares</h2>
+<h3>21.1 Documentação Oficial</h3>
+<ul>
+<li>Kubernetes.io</li>
+<li>Docker.com/docs</li>
+<li>Terraform.io/docs</li>
+<li>Prometheus.io/docs</li>
+</ul>
+<h3>21.2 Plataformas de Aprendizado</h3>
+<ul>
+<li><strong>A Cloud Guru</strong></li>
+<li><strong>Pluralsight</strong></li>
+<li><strong>Linux Academy</strong></li>
+<li><strong>KodeKloud</strong> (hands-on labs)</li>
+<li><strong>Udemy</strong> (cursos específicos)</li>
+</ul>
+<h3>21.3 Livros Recomendados</h3>
+<ul>
+<li>&quot;The Phoenix Project&quot; - Gene Kim</li>
+<li>&quot;The DevOps Handbook&quot; - Gene Kim</li>
+<li>&quot;Site Reliability Engineering&quot; - Google</li>
+<li>&quot;Kubernetes: Up and Running&quot; - Kelsey Hightower</li>
+<li>&quot;Infrastructure as Code&quot; - Kief Morris</li>
+</ul>
+<h3>21.4 Blogs e Sites</h3>
+<ul>
+<li>DevOps.com</li>
+<li>The New Stack</li>
+<li>InfoQ DevOps</li>
+<li>AWS Blog</li>
+<li>CNCF Blog</li>
+</ul>
+<h3>21.5 Podcasts</h3>
+<ul>
+<li>DevOps Chat</li>
+<li>The Cloudcast</li>
+<li>Software Engineering Daily</li>
+<li>DevOps and Docker Talk</li>
+</ul>
+<h3>21.6 Comunidades</h3>
+<ul>
+<li>Reddit: r/devops, r/kubernetes</li>
+<li>Discord: DevOps communities</li>
+<li>Stack Overflow</li>
+<li>GitHub Discussions</li>
+<li>LinkedIn DevOps Groups</li>
+</ul>
+<hr>
+<h2>22. Dicas Finais para Sucesso</h2>
+<h3>22.1 Hands-on Learning</h3>
+<ul>
+<li><strong>Pratique constantemente</strong>: DevOps é uma disciplina prática</li>
+<li><strong>Build projects</strong>: Crie projetos reais, não apenas tutoriais</li>
+<li><strong>Break things</strong>: Aprenda com falhas e troubleshooting</li>
+<li><strong>Document everything</strong>: Mantenha documentação dos seus labs</li>
+</ul>
+<h3>22.2 Community Engagement</h3>
+<ul>
+<li><strong>Participe de comunidades</strong>: Reddit, Discord, Slack</li>
+<li><strong>Contribua para projetos open source</strong>: GitHub contributions</li>
+<li><strong>Attend meetups</strong>: Local DevOps meetups e conferências</li>
+<li><strong>Share knowledge</strong>: Blog posts, apresentações</li>
+</ul>
+<h3>22.3 Continuous Learning</h3>
+<ul>
+<li><strong>Stay updated</strong>: DevOps evolui rapidamente</li>
+<li><strong>Follow thought leaders</strong>: No Twitter, LinkedIn</li>
+<li><strong>Read release notes</strong>: Novas features das ferramentas</li>
+<li><strong>Experiment with new tools</strong>: Sempre teste novas soluções</li>
+</ul>
+<h3>22.4 Career Development</h3>
+<ul>
+<li><strong>Build a portfolio</strong>: GitHub com projetos demonstráveis</li>
+<li><strong>Get certified</strong>: Certificações validam conhecimento</li>
+<li><strong>Network</strong>: Conecte-se com outros profissionais</li>
+<li><strong>Mentor others</strong>: Ensinar solidifica seu aprendizado</li>
+</ul>
+<h3>22.5 Soft Skills Importantes</h3>
+<ul>
+<li><strong>Communication</strong>: DevOps é sobre colaboração</li>
+<li><strong>Problem-solving</strong>: Debugging e troubleshooting</li>
+<li><strong>Automation mindset</strong>: Sempre pense em automatizar</li>
+<li><strong>Security awareness</strong>: Segurança em primeiro lugar</li>
+</ul>
+<hr>
+<h2>Conclusão</h2>
+<p>Este roadmap apresenta um caminho estruturado para dominar DevOps em 2025. O segredo é a prática consistente e a aplicação dos conceitos em projetos reais. DevOps não é apenas sobre ferramentas, mas sobre cultura, processos e mentalidade de melhoria contínua.</p>
+<p>Lembre-se:</p>
+<ul>
+<li><strong>Comece pequeno</strong>: Não tente aprender tudo de uma vez</li>
+<li><strong>Seja prático</strong>: Implemente o que aprender</li>
+<li><strong>Seja paciente</strong>: DevOps é uma jornada, não um destino</li>
+<li><strong>Mantenha-se atualizado</strong>: A tecnologia evolui constantemente</li>
+</ul>
+<p>Boa sorte na sua jornada DevOps! 🚀</p>
+<hr>
+<p><em>Este guia foi criado para ser um recurso completo de estudos. Atualize-o regularmente conforme novas tecnologias e práticas surgirem no mercado.</em></p>
+

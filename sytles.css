@@ -76,6 +76,13 @@
     border-radius: 12px;
     padding: 24px;
   }
+  #markdownFrame {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    min-height: 600px;
+  }
 
   /* Markdown renderizado */
   .markdown {
