@@ -56,6 +56,48 @@
     margin-left: 20px;
   }
   
+  /* Markdown renderizado */
+  .markdown {
+    font-size: 16px;
+  }
+  .markdown h1, .markdown h2, .markdown h3, .markdown h4 {
+    color: #00c6ff;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  .markdown p {
+    margin: 10px 0;
+  }
+  .markdown pre {
+    background: #0f0f0f;
+    padding: 12px;
+    border-radius: 6px;
+    overflow: auto;
+    border: 1px solid #222;
+  }
+  .markdown code {
+    background: #0f0f0f;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #222;
+  }
+  .markdown blockquote {
+    border-left: 4px solid #333;
+    padding-left: 12px;
+    color: #ccc;
+    margin: 12px 0;
+  }
+  .markdown table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  .markdown th, .markdown td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+  
   /* Rodapé */
   footer {
     text-align: center;
